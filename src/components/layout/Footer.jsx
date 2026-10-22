@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { footerColumns } from '../../data/navigation.js'
+import { company } from '../../data/company.js'
 import { Icon, Logo } from '../ui/Icons.jsx'
 import '../../styles/footer.css'
 
@@ -35,22 +36,34 @@ export default function Footer() {
             <h4>Get in touch</h4>
             <p className="footer-contact">
               <strong>Email</strong>
-              <a href="mailto:info@geocentroid.com">info@geocentroid.com</a>
+              <a href={`mailto:${company.email}`}>{company.email}</a>
             </p>
             <p className="footer-contact">
               <strong>Phone</strong>
-              <a href="tel:+911204567890">+91 120 456 7890</a>
+              <a href={company.phoneHref}>{company.phone}</a>
             </p>
             <p className="footer-contact">
               <strong>Office</strong>
-              <span>A-123, Sector 62, Noida, Uttar Pradesh 201309, India</span>
+              <span>
+                {company.legalName}<br />
+                {company.addressLines[0]}<br />
+                {company.addressLines[1]}
+              </span>
+            </p>
+            <p className="footer-contact">
+              <strong>GSTIN</strong>
+              <span>{company.gstin}</span>
+            </p>
+            <p className="footer-contact">
+              <strong>CIN</strong>
+              <span>{company.cin}</span>
             </p>
             <Link className="footer-cta" to="/quote">Request a Quote →</Link>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} GeoCentroid. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} {company.legalName}. All rights reserved.</span>
           <span>Privacy Policy · Terms & Conditions</span>
         </div>
       </div>

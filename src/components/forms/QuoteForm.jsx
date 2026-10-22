@@ -42,7 +42,7 @@ export default function QuoteForm({ compact = false }) {
         <option>Geospatial</option>
         <option>Digital Twin</option>
       </select>
-      <div style={{ display: 'grid', gridTemplateColumns: compact ? '1fr 1fr' : '1fr', gap: 12 }}>
+      <div className={compact ? 'form-row' : undefined}>
         <select name="industry" value={form.industry} onChange={update} required>
           <option value="">Industry</option>
           <option>Architecture & Construction</option>

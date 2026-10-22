@@ -106,18 +106,8 @@ export function Icon({ name, size = 22 }) {
 
 export function Logo({ light = false }) {
   return (
-    <span className="logo">
-      <svg className="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" stroke={light ? '#7eb0ff' : '#1d6ef5'} strokeWidth="2.4" />
-        <path
-          d="M16 24c0-5.5 4.5-10 10-10h3v5.2h-3a4.8 4.8 0 100 9.6h8.4V34H26c-5.5 0-10-4.5-10-10z"
-          fill={light ? '#5aa0ff' : '#1d6ef5'}
-        />
-      </svg>
-      <span className="logo-text">
-        <strong>GEOCENTROID</strong>
-        <span>Engineering · Geospatial · Digital</span>
-      </span>
+    <span className={`logo ${light ? 'logo-on-dark' : 'logo-on-light'}`}>
+      <img src="/logo.png" alt="GeoCentroid — BIM | Geospatial | Intelligence" />
     </span>
   )
 }

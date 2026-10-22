@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Button from '../components/ui/Button.jsx'
 import { Icon } from '../components/ui/Icons.jsx'
 import QuoteForm from '../components/forms/QuoteForm.jsx'
+import { company } from '../data/company.js'
 import { featuredProjects, heroPills, industries, solutions, whyUs } from '../data/home.js'
 import '../styles/home.css'
 
@@ -143,9 +144,9 @@ export default function Home() {
             <h2>Let’s Build Something Together</h2>
             <p>Share your project requirements and our team will get back to you with the right solution.</p>
             <div className="contact-mini">
-              <span>info@geocentroid.com</span>
-              <span>+91 120 456 7890</span>
-              <span>WhatsApp</span>
+              <span>{company.email}</span>
+              <span>{company.phone}</span>
+              <span>Bengaluru</span>
             </div>
           </div>
           <QuoteForm />
