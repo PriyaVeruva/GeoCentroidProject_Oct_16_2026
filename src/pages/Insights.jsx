@@ -1,11 +1,7 @@
+import { Link } from 'react-router-dom'
+import { insights } from '../data/insights.js'
 import CtaBanner from '../components/ui/CtaBanner.jsx'
 import '../styles/pages.css'
-
-const posts = [
-  { title: 'How Scan to BIM reduces rework on renovation projects', tag: 'BIM' },
-  { title: 'What LOD really means for structural and MEP coordination', tag: 'Coordination' },
-  { title: 'From point cloud to digital twin: a practical delivery path', tag: 'Digital Twin' },
-]
 
 export default function Insights() {
   return (
@@ -19,12 +15,13 @@ export default function Insights() {
       </section>
       <section className="section">
         <div className="container card-grid">
-          {posts.map((post) => (
-            <article className="overview-card" key={post.title}>
+          {insights.map((post) => (
+            <Link className="overview-card" to={`/insights/${post.slug}`} key={post.slug}>
               <p className="eyebrow">{post.tag}</p>
               <h3>{post.title}</h3>
-              <p className="section-lead">Read how GeoCentroid approaches accuracy, coordination and handover on live projects.</p>
-            </article>
+              <p>{post.excerpt}</p>
+              <span className="link-arrow">Read article →</span>
+            </Link>
           ))}
         </div>
       </section>

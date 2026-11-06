@@ -1,3 +1,5 @@
+import { projects } from './projects.js'
+
 export const heroPills = [
   'BIM & CAD',
   'Geospatial',
@@ -12,13 +14,13 @@ export const solutions = [
     title: 'BIM & CAD Engineering',
     text: '3D modelling, coordination and engineering documentation.',
     image: '/images/image8.jpeg',
-    to: '/services/structural-bim',
+    to: '/services/bim',
   },
   {
     title: 'Geospatial & GIS',
     text: 'Mapping, spatial analysis, remote sensing and GIS solutions.',
     image: '/images/image16.jpeg',
-    to: '/services',
+    to: '/services/geospatial',
   },
   {
     title: 'LiDAR & Reality Capture',
@@ -30,42 +32,17 @@ export const solutions = [
     title: 'Digital Twin & Visualization',
     text: '3D models, simulation, AR/VR and immersive experiences.',
     image: '/images/image21.jpeg',
-    to: '/services',
+    to: '/services/digital-twin',
   },
   {
     title: 'UAV & Drone Mapping',
     text: 'Aerial surveys, orthomosaics, inspection and monitoring.',
     image: '/images/image14.jpeg',
-    to: '/services',
+    to: '/services/uav-drone-mapping',
   },
 ]
 
-export const featuredProjects = [
-  {
-    title: 'Building Scan to BIM',
-    tag: 'BIM & CAD',
-    meta: 'Commercial · India',
-    image: '/images/image8.jpeg',
-  },
-  {
-    title: 'Highway Corridor Mapping',
-    tag: 'Geospatial & GIS',
-    meta: 'Infrastructure · India',
-    image: '/images/image16.jpeg',
-  },
-  {
-    title: 'Industrial Plant Survey',
-    tag: 'LiDAR & Reality Capture',
-    meta: 'Oil & Gas · UAE',
-    image: '/images/image22.jpeg',
-  },
-  {
-    title: 'Smart City Digital Twin',
-    tag: 'Digital Twin',
-    meta: 'Urban Development · Singapore',
-    image: '/images/image21.jpeg',
-  },
-]
+export const featuredProjects = projects.slice(0, 4)
 
 export const industries = [
   { label: 'Infrastructure', icon: 'infra' },

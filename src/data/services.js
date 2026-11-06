@@ -186,7 +186,7 @@ export const services = {
     slug: 'aim',
     category: 'AIM',
     name: 'Asset Information Modelling Services',
-    breadcrumb: ['Home', 'Services', 'AIM'],
+    breadcrumb: ['Home', 'Services', 'BIM', 'AIM'],
     intro:
       'GeoCentroid provides comprehensive Asset Information Modelling (AIM) services to help organisations capture, manage and utilise accurate, up-to-date information about their built assets. We develop intelligent 3D models enriched with asset data to support facility management, maintenance, operations and lifecycle planning.',
     extra: 'Our AIM solutions ensure better asset visibility, improved decision-making and long-term value for your infrastructure and facilities.',
@@ -247,9 +247,9 @@ export const services = {
     heroImage: '/images/image13.jpeg',
     capabilitiesTitle: 'Our Scan to BIM Services',
     capabilities: [
-      { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/image8.jpeg' },
-      { n: '02', title: 'Structural', text: 'Accurate structural models for analysis, design and construction, including columns, beams, slabs, rebar modelling and connection details.', image: '/images/image5.jpeg' },
-      { n: '03', title: 'MEPF', text: 'Coordinated building services models for efficient operations covering HVAC, electrical, plumbing and fire protection systems.', image: '/images/image6.jpeg' },
+      { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/image8.jpeg', to: '/services/scan-to-bim-architectural' },
+      { n: '02', title: 'Structural', text: 'Accurate structural models for analysis, design and construction, including columns, beams, slabs, rebar modelling and connection details.', image: '/images/image5.jpeg', to: '/services/scan-to-bim-structural' },
+      { n: '03', title: 'MEPF', text: 'Coordinated building services models for efficient operations covering HVAC, electrical, plumbing and fire protection systems.', image: '/images/image6.jpeg', to: '/services/scan-to-bim-mepf' },
     ],
     elementsTitle: 'Our Process',
     elements: [
@@ -258,12 +258,13 @@ export const services = {
       { title: '3. 3D Modelling & Documentation', text: 'Intelligent BIM from scan data', icon: 'cube' },
       { title: '4. Quality Check & Delivery', text: 'Validated models and drawings', icon: 'check' },
     ],
-    deliverablesTitle: 'Why Choose GeoCentroid',
+    deliverablesTitle: 'Our Deliverables',
     deliverables: [
-      'High accuracy from point cloud to precise BIM models',
-      'End-to-end support from capture to deliverables',
-      'Expert team skilled professionals with industry experience',
-      'Flexible delivery — scalable solutions to meet project needs',
+      'As-built architectural, structural and MEPF BIM models from scan data',
+      'Registered point-cloud-aligned geometry to the agreed LOD',
+      'Plans, sections, elevations and coordination models',
+      'Quality-checked models ready for design, retrofit or FM',
+      'Exports in agreed formats (RVT, IFC, DWG, etc.)',
     ],
     industries: sharedIndustries,
     why: [
@@ -276,9 +277,16 @@ export const services = {
   },
   'cad-engineering': {
     slug: 'cad-engineering',
-    category: 'CAD',
+    hub: true,
+    children: [
+      { title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings.', to: '/services/scan-to-cad' },
+      { title: 'Measurable Building Survey', text: 'Capture accurate as-built dimensions and documentation.', to: '/services/measurable-building-survey' },
+      { title: 'Utility Engineering', text: 'Map and coordinate underground and above-ground utilities.', to: '/services/utility-engineering' },
+      { title: 'Plant Modelling', text: 'Detailed 3D CAD models for industrial plants and process facilities.', to: '/services/plant-modelling' },
+    ],
+    category: 'CAD Engineering',
     name: 'CAD Engineering Services',
-    breadcrumb: ['Home', 'Services', 'CAD Engineering Services'],
+    breadcrumb: ['Home', 'Services', 'CAD Engineering'],
     intro:
       'GeoCentroid delivers high-precision CAD engineering services including scan to CAD, measurable building surveys, utility engineering and plant modelling. We convert real-world data into detailed, reliable and coordinated CAD drawings.',
     extra: 'Accurate. Detailed. Build-Ready.',
@@ -287,10 +295,10 @@ export const services = {
     heroImage: '/images/image7.jpeg',
     capabilitiesTitle: 'Our CAD Engineering Services',
     capabilities: [
-      { n: '01', title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings with high precision and detail.', image: '/images/image13.jpeg' },
-      { n: '02', title: 'Measurable Building Survey', text: 'Capture accurate as-built dimensions and documentation using advanced surveying techniques and tools.', image: '/images/image26.jpeg' },
-      { n: '03', title: 'Utility Engineering', text: 'Map and coordinate underground utilities with precise drawings and 3D models for safe and efficient project execution.', image: '/images/image17.jpeg' },
-      { n: '04', title: 'Plant Modelling', text: 'Deliver detailed 3D CAD models for industrial plants, piping systems and process facilities.', image: '/images/image22.jpeg' },
+      { n: '01', title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings with high precision and detail.', image: '/images/image13.jpeg', to: '/services/scan-to-cad' },
+      { n: '02', title: 'Measurable Building Survey', text: 'Capture accurate as-built dimensions and documentation using advanced surveying techniques and tools.', image: '/images/image26.jpeg', to: '/services/measurable-building-survey' },
+      { n: '03', title: 'Utility Engineering', text: 'Map and coordinate underground utilities with precise drawings and 3D models for safe and efficient project execution.', image: '/images/image17.jpeg', to: '/services/utility-engineering' },
+      { n: '04', title: 'Plant Modelling', text: 'Deliver detailed 3D CAD models for industrial plants, piping systems and process facilities.', image: '/images/image22.jpeg', to: '/services/plant-modelling' },
     ],
     elementsTitle: 'CAD Service Capabilities',
     elements: [

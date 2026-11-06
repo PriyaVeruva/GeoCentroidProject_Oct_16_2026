@@ -1,21 +1,14 @@
 import { useMemo, useState } from 'react'
-import { featuredProjects } from '../data/home.js'
+import { Link } from 'react-router-dom'
+import { projectFilters, projects } from '../data/projects.js'
 import CtaBanner from '../components/ui/CtaBanner.jsx'
 import '../styles/pages.css'
-
-const extra = [
-  { title: 'Coastal Survey & Bathymetry', tag: 'UAV & Drone Mapping', meta: 'UAE · Marine · 2022', image: '/images/image14.jpeg' },
-  { title: 'Residential Tower – As-Built Model', tag: 'BIM & CAD', meta: 'Dubai, UAE · Construction · 2021', image: '/images/image12.jpeg' },
-]
-
-const filters = ['All Projects', 'BIM & CAD', 'Geospatial & GIS', 'LiDAR & Reality Capture', 'Digital Twin', 'UAV & Drone Mapping']
 
 export default function Projects() {
   const [filter, setFilter] = useState('All Projects')
   const list = useMemo(() => {
-    const all = [...featuredProjects, ...extra]
-    if (filter === 'All Projects') return all
-    return all.filter((p) => p.tag.includes(filter.split(' ')[0]) || p.tag === filter)
+    if (filter === 'All Projects') return projects
+    return projects.filter((item) => item.tag === filter)
   }, [filter])
 
   return (
@@ -35,7 +28,7 @@ export default function Projects() {
       <section className="section">
         <div className="container">
           <div className="filter-row">
-            {filters.map((item) => (
+            {projectFilters.map((item) => (
               <button key={item} className={`chip ${filter === item ? 'active' : ''}`} onClick={() => setFilter(item)}>
                 {item}
               </button>
@@ -43,14 +36,15 @@ export default function Projects() {
           </div>
           <div className="card-grid">
             {list.map((item) => (
-              <article className="media-card" key={item.title}>
+              <Link className="media-card" to={`/projects/${item.slug}`} key={item.slug}>
                 <img src={item.image} alt="" />
                 <div>
                   <p className="eyebrow">{item.tag}</p>
                   <h3>{item.title}</h3>
                   <p className="section-lead">{item.meta}</p>
+                  <span className="link-arrow">View case study →</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

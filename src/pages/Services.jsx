@@ -40,7 +40,8 @@ export default function Services() {
             {megaMenu.map((col) => (
               <article className="overview-card" key={col.title}>
                 <h3 style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                  <Icon name={col.icon} size={18} /> {col.title}
+                  <Icon name={col.icon} size={18} />
+                  {col.to ? <Link to={col.to}>{col.title}</Link> : col.title}
                 </h3>
                 {col.items.map((item) => (
                   <Link key={item.label} to={item.to} className="link-arrow" style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0' }}>

@@ -3,7 +3,8 @@ import Button from '../components/ui/Button.jsx'
 import { Icon } from '../components/ui/Icons.jsx'
 import QuoteForm from '../components/forms/QuoteForm.jsx'
 import { company } from '../data/company.js'
-import { featuredProjects, heroPills, industries, solutions, whyUs } from '../data/home.js'
+import { featuredProjects, heroPills, solutions, whyUs } from '../data/home.js'
+import { industrySectors } from '../data/industries.js'
 import '../styles/home.css'
 
 export default function Home() {
@@ -69,7 +70,7 @@ export default function Home() {
           </div>
           <div className="project-cards">
             {featuredProjects.map((project) => (
-              <Link className="project-card" to="/projects" key={project.title}>
+              <Link className="project-card" to={`/projects/${project.slug}`} key={project.slug}>
                 <img src={project.image} alt="" />
                 <div className="project-card-body">
                   <small>{project.tag}</small>
@@ -95,10 +96,10 @@ export default function Home() {
             <Button to="/industries">Explore All Industries</Button>
           </div>
           <div className="industry-grid">
-            {industries.map((item) => (
-              <Link className="industry-chip" to="/industries" key={item.label}>
+            {industrySectors.map((item) => (
+              <Link className="industry-chip" to={`/industries#${item.slug}`} key={item.slug}>
                 <span><Icon name={item.icon} size={22} /></span>
-                <strong>{item.label}</strong>
+                <strong>{item.title}</strong>
               </Link>
             ))}
           </div>

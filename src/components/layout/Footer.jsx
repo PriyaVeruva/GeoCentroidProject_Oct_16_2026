@@ -64,7 +64,11 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} {company.legalName}. All rights reserved.</span>
-          <span>Privacy Policy · Terms & Conditions</span>
+          <span>
+            <Link to="/legal/privacy">Privacy Policy</Link>
+            {' · '}
+            <Link to="/legal/terms">Terms & Conditions</Link>
+          </span>
         </div>
       </div>
     </footer>

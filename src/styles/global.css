@@ -124,6 +124,12 @@ ul {
   color: #fff;
 }
 
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-primary:hover {
   background: var(--blue-600);
   transform: translateY(-1px);

@@ -1,0 +1,27 @@
+export function whyIcon(title = '') {
+  const t = title.toLowerCase()
+
+  if (t.includes('clash')) return 'layers'
+  if (/(accur|precis|measured|scan-true|control-based|installed-condition|visible-services)/.test(t)) return 'target'
+  if (/(analys|decision|test before|scenario|insight)/.test(t)) return 'target'
+  if (/(coordinat|multidisciplin|federat|network|context)/.test(t)) return 'layers'
+  if (/(standard|lod|bep|audit|assurance|hygiene|quality)/.test(t)) return 'check'
+  if (/(handover|document|draft|reporting|packs|files|records|artefact)/.test(t)) return 'draft'
+  if (/(design-ready|design support|drawing)/.test(t)) return 'draft'
+  if (/(technolog|platform|software|automat|built for|web|custom|\bit\b)/.test(t)) return 'monitor'
+  if (/(gis|geospatial|mapping|mapped|ortho|true-to-scale|planning underlay)/.test(t)) return 'globe'
+  if (/(integrat|connect|pipeline|data-driven|data-ready)/.test(t)) return 'gear'
+  if (/(scan|survey|uav|lidar|point cloud|capture|retrofit)/.test(t)) return 'scan'
+  if (/(safe|secur|shield|risk)/.test(t)) return 'shield'
+  if (/(visual|see it|immers|render|communication|clarity|imagery|inspection)/.test(t)) return 'eye'
+  if (/(heritage|renovation|architect)/.test(t)) return 'arch'
+  if (/(advice|independent|consult)/.test(t)) return 'handshake'
+  if (/(repeat|productiv|fast|progress|tracking)/.test(t)) return 'clock'
+  if (/(industrial|factory|plant|shutdown|industry focus)/.test(t)) return 'factory'
+  if (/(corridor|highway|urban|transport)/.test(t)) return 'transport'
+  if (/(operation|process|production fit|repetitive)/.test(t)) return 'gear'
+  if (/(flexib|enablement|adopt|team|expert|experience|coaching)/.test(t)) return 'users'
+  if (t.includes('support')) return 'users'
+  if (t.includes('domain')) return 'cube'
+  return 'cube'
+}

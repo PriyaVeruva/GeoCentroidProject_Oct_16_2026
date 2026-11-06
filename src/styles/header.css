@@ -116,6 +116,17 @@
   color: var(--navy-800);
 }
 
+.mega-col h4 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy-800) !important;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0;
+  justify-content: flex-start;
+}
+
 .mega-col a {
   display: flex;
   justify-content: space-between;

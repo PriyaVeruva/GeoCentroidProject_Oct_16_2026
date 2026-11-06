@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { megaMenu, navLinks } from '../../data/navigation.js'
+import { searchServices } from '../../data/searchServices.js'
 import { Icon, Logo } from '../ui/Icons.jsx'
 import Button from '../ui/Button.jsx'
 import '../../styles/header.css'
@@ -18,11 +20,27 @@ export default function Header() {
 
   function onSearch(e) {
     e.preventDefault()
-    if (!query.trim()) return
-    navigate(`/services?q=${encodeURIComponent(query.trim())}`)
+    const q = query.trim()
+    if (!q) return
+
+    const matches = searchServices(q)
     setSearchOpen(false)
     setQuery('')
     setOpen(false)
+
+    if (!matches.length) {
+      toast.info(`No services found for “${q}”.`, { toastId: `search-empty-${q.toLowerCase()}` })
+      return
+    }
+
+    const target = matches[0]
+    toast.success(
+      matches.length === 1
+        ? `Opening ${target.name}.`
+        : `Found ${matches.length} services for “${q}”. Opening ${target.name}.`,
+      { toastId: `search-ok-${target.slug}` }
+    )
+    navigate(`/services/${target.slug}`)
   }
 
   return (
@@ -47,7 +65,15 @@ export default function Header() {
                   {megaMenu.map((col) => (
                     <div className="mega-col" key={col.title}>
                       <h4>
-                        <Icon name={col.icon} size={18} /> {col.title}
+                        {col.to ? (
+                          <Link to={col.to} onClick={() => setMegaOpen(false)}>
+                            <Icon name={col.icon} size={18} /> {col.title}
+                          </Link>
+                        ) : (
+                          <>
+                            <Icon name={col.icon} size={18} /> {col.title}
+                          </>
+                        )}
                       </h4>
                       {col.items.map((item) => (
                         <Link key={item.label} to={item.to} onClick={() => setMegaOpen(false)}>
@@ -99,7 +125,13 @@ export default function Header() {
               {link.mega
                 ? megaMenu.map((col) => (
                     <div className="mobile-sub" key={col.title}>
-                      <strong>{col.title}</strong>
+                      <strong>
+                        {col.to ? (
+                          <Link to={col.to} onClick={() => setOpen(false)}>{col.title}</Link>
+                        ) : (
+                          col.title
+                        )}
+                      </strong>
                       {col.items.map((item) => (
                         <Link key={item.label} to={item.to} onClick={() => setOpen(false)}>
                           {item.label}

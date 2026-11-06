@@ -7,6 +7,9 @@ import ServiceDetail from './pages/ServiceDetail.jsx'
 import Industries from './pages/Industries.jsx'
 import Projects from './pages/Projects.jsx'
 import Insights from './pages/Insights.jsx'
+import InsightDetail from './pages/InsightDetail.jsx'
+import ProjectDetail from './pages/ProjectDetail.jsx'
+import Legal from './pages/Legal.jsx'
 import Contact from './pages/Contact.jsx'
 import Quote from './pages/Quote.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -21,7 +24,10 @@ export default function App() {
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/insights" element={<Insights />} />
+        <Route path="/insights/:slug" element={<InsightDetail />} />
+        <Route path="/legal/:slug" element={<Legal />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/quote" element={<Quote />} />
         <Route path="*" element={<NotFound />} />
