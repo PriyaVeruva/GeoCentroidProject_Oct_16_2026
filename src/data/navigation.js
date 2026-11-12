@@ -14,10 +14,10 @@ export const megaMenu = [
     icon: 'building',
     to: '/services/bim',
     items: [
-      { label: 'Structural', to: '/services/structural-bim' },
       { label: 'Architectural', to: '/services/architectural-bim' },
+      { label: 'Structural', to: '/services/structural-bim' },
       { label: 'MEPF', to: '/services/mepf-bim' },
-      { label: 'Asset Information Modeling (AIM)', to: '/services/aim' },
+      { label: 'Asset Information Modelling', to: '/services/aim' },
     ],
   },
   {
@@ -49,8 +49,8 @@ export const megaMenu = [
       { label: 'Mobile Mapping', to: '/services/mobile-mapping' },
       { label: 'Photogrammetry', to: '/services/photogrammetry' },
       { label: 'Ortho Processing', to: '/services/ortho-processing' },
-      { label: 'Utility Survey and Mapping', to: '/services/utility-survey' },
-      { label: 'UAV & Drone Mapping', to: '/services/uav-drone-mapping' },
+      { label: 'Utility Survey', to: '/services/utility-survey' },
+      { label: 'UAV Mapping', to: '/services/uav-drone-mapping' },
     ],
   },
   {

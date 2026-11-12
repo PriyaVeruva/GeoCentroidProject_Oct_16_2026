@@ -12,7 +12,7 @@ const darkHeroRoutes = ['/', '/about', '/industries', '/projects', '/insights', 
 export default function Header() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const isDark = darkHeroRoutes.includes(pathname)
+  const isDark = darkHeroRoutes.includes(pathname) || /^\/services\/[^/]+$/.test(pathname)
   const [open, setOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -67,17 +67,19 @@ export default function Header() {
                       <h4>
                         {col.to ? (
                           <Link to={col.to} onClick={() => setMegaOpen(false)}>
-                            <Icon name={col.icon} size={18} /> {col.title}
+                            <Icon name={col.icon} size={16} />
+                            <span>{col.title}</span>
                           </Link>
                         ) : (
                           <>
-                            <Icon name={col.icon} size={18} /> {col.title}
+                            <Icon name={col.icon} size={16} />
+                            <span>{col.title}</span>
                           </>
                         )}
                       </h4>
                       {col.items.map((item) => (
-                        <Link key={item.label} to={item.to} onClick={() => setMegaOpen(false)}>
-                          {item.label} <span>›</span>
+                        <Link className="mega-item" key={item.label} to={item.to} onClick={() => setMegaOpen(false)}>
+                          {item.label}
                         </Link>
                       ))}
                     </div>

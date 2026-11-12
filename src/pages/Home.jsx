@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div>
             <p className="eyebrow" style={{ color: '#8cbcff' }}>Integrated Digital Engineering Solutions</p>
-            <h1>From Reality to Digital Intelligence.</h1>
+            <h1>Powering Global Progress Through Technology</h1>
             <p>
               We combine BIM, Geospatial, Reality Capture and Digital Twin technologies to help you plan, design, build and operate smarter, safer and more sustainable assets.
             </p>
@@ -34,12 +34,12 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="solutions-head">
-            <div>
-              <p className="eyebrow">Our Integrated Solutions</p>
-              <h2 className="section-title">Technology. Expertise. Real Impact.</h2>
-            </div>
+            <p className="eyebrow">Our Integrated Solutions</p>
+            <h2 className="section-title">Technology. Expertise. Real Impact.</h2>
             <p className="section-lead">
-              End-to-end digital solutions that turn complex data into actionable insights, enabling better decisions and greater project value.
+              End-to-end digital solutions that turn complex data into actionable insights,
+              <br />
+              enabling better decisions and greater project value.
             </p>
           </div>
           <div className="solution-grid">
@@ -108,32 +108,34 @@ export default function Home() {
 
       <section className="section section-soft">
         <div className="container">
-          <div className="band-head light">
-            <div>
-              <p className="eyebrow">Why GeoCentroid</p>
-              <h2 className="section-title">Your Trusted Digital Engineering Partner</h2>
-            </div>
+          <div className="why-head">
+            <p className="eyebrow">Why GeoCentroid</p>
+            <h2 className="section-title">Your Trusted Digital Engineering Partner</h2>
             <p className="section-lead">
               We bring together domain expertise, advanced technology and a commitment to quality to deliver solutions that make a difference.
             </p>
           </div>
           <div className="why-layout">
-            <div className="why-points">
-              {whyUs.map((item) => (
-                <article key={item.title}>
-                  <span className="icon-bubble"><Icon name={item.icon} size={18} /></span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
+            {whyUs.map((item) => (
+              <article key={item.title}>
+                <span className="icon-bubble"><Icon name={item.icon} size={18} /></span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
             <aside className="testimonial-card">
-              <p>
-                GeoCentroid’s team delivers high-quality BIM models with unmatched accuracy and care. Their professionalism and technical expertise made our project a huge success.
-              </p>
-              <strong>Construction Client</strong>
+              <div>
+                <p className="testimonial-label">Client voice</p>
+                <p>
+                  “They modelled the structure from our drawings, coordinated it with architecture and MEP, and sent clash reports we could act on before issue for construction.”
+                </p>
+              </div>
+              <div className="testimonial-meta">
+                <strong>Project manager</strong>
+                <span className="testimonial-role">Commercial building project</span>
+              </div>
             </aside>
           </div>
         </div>
@@ -145,8 +147,8 @@ export default function Home() {
             <h2>Let’s Build Something Together</h2>
             <p>Share your project requirements and our team will get back to you with the right solution.</p>
             <div className="contact-mini">
-              <span>{company.email}</span>
-              <span>{company.phone}</span>
+              <a href={`mailto:${company.email}`}>{company.email}</a>
+              <a href={company.phoneHref}>{company.phone}</a>
               <span>Bengaluru</span>
             </div>
           </div>
@@ -155,7 +157,7 @@ export default function Home() {
             <h3>Download Company Profile</h3>
             <p>Learn more about our capabilities, experience and success stories.</p>
             <div style={{ marginTop: 16 }}>
-              <Button variant="outline" href="/images/image48.jpeg" withArrow={false}>Download PDF</Button>
+              <Button variant="outline" href="/company-profile.pdf" withArrow={false}>Download PDF</Button>
             </div>
           </div>
         </div>

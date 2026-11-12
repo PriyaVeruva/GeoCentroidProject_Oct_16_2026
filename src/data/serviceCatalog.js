@@ -94,8 +94,8 @@ export const extraServices = {
     bannerTitle: 'Need BIM modelling support?',
     capabilitiesTitle: 'Our BIM Capabilities',
     children: [
-      { title: 'Structural BIM', text: 'Foundations, frames, reinforcement and structural coordination.', to: '/services/structural-bim' },
       { title: 'Architectural BIM', text: 'Walls, façades, interiors and architectural documentation.', to: '/services/architectural-bim' },
+      { title: 'Structural BIM', text: 'Foundations, frames, reinforcement and structural coordination.', to: '/services/structural-bim' },
       { title: 'MEPF BIM', text: 'Mechanical, electrical, plumbing and fire protection models.', to: '/services/mepf-bim' },
       { title: 'Asset Information Modelling', text: 'Intelligent models enriched for facilities and operations.', to: '/services/aim' },
     ],

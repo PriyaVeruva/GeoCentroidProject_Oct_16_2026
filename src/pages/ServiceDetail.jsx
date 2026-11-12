@@ -25,13 +25,9 @@ export default function ServiceDetail() {
   const service = services[slug]
   if (!service) return <Navigate to="/services" replace />
 
-  const siblings = Object.values(services).filter(
-    (item) => item.category === service.category && item.slug !== service.slug && !item.hub
-  )
-
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero service-hero">
         <div className="container page-hero-grid">
           <div>
             <p className="breadcrumb">
@@ -84,7 +80,7 @@ export default function ServiceDetail() {
       <section className="section section-soft">
         <div className="container">
           <h2 className="section-title" style={{ marginBottom: 24 }}>{service.capabilitiesTitle}</h2>
-          <div className="cap-grid">
+          <div className={`cap-grid cap-count-${service.capabilities.length}`}>
             {service.capabilities.map((item) => {
               const body = (
                 <>
@@ -178,25 +174,6 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {!service.hub && siblings.length ? (
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title" style={{ marginBottom: 24 }}>
-              Related {service.category}
-            </h2>
-            <div className="overview-grid">
-              {siblings.map((item) => (
-                <Link className="overview-card" to={`/services/${item.slug}`} key={item.slug}>
-                  <h3>{item.name}</h3>
-                  <p>{item.extra || item.intro}</p>
-                  <span className="link-arrow">Explore →</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
       <CtaBanner
         title={service.bannerTitle}
         text={
@@ -204,6 +181,7 @@ export default function ServiceDetail() {
           'Share your project scope, source data and delivery requirements with our team to discuss a suitable approach.'
         }
         action={service.cta}
+        pdfHref="/company-profile.pdf"
       />
     </>
   )

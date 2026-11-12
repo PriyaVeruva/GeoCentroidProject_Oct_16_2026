@@ -244,6 +244,14 @@ ul {
   margin-top: 10px;
 }
 
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .form-card {
   background: #fff;
   border-radius: 18px;

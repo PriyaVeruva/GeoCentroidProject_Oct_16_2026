@@ -23,6 +23,43 @@
   max-width: 58ch;
 }
 
+.page-hero.service-hero {
+  background: var(--navy-800);
+  padding: 48px 0 56px;
+}
+
+.page-hero.service-hero h1 {
+  color: #fff;
+}
+
+.page-hero.service-hero p,
+.page-hero.service-hero .breadcrumb,
+.page-hero.service-hero .breadcrumb span {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.page-hero.service-hero .breadcrumb a:hover {
+  color: #fff;
+}
+
+.page-hero.service-hero .hero-visual {
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  display: grid;
+  place-items: center;
+  min-height: 340px;
+}
+
+.page-hero.service-hero .hero-visual img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  border-radius: 12px;
+}
+
 .breadcrumb a {
   color: inherit;
 }
@@ -62,8 +99,25 @@
 
 .cap-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.cap-grid.cap-count-2,
+.cap-grid.cap-count-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cap-grid.cap-count-5 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.cap-grid.cap-count-5 .cap-card {
+  grid-column: span 2;
+}
+
+.cap-grid.cap-count-5 .cap-card:nth-child(n + 4) {
+  grid-column: span 3;
 }
 
 .cap-card {
