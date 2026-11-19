@@ -18,10 +18,10 @@ export default function Projects() {
           <p className="eyebrow" style={{ color: '#8cbcff' }}>Our Projects</p>
           <h1>Real Projects. Measurable Results.</h1>
           <p>From complex infrastructure to industrial assets, our projects showcase the power of integrated digital solutions in solving real-world challenges.</p>
-          <div className="stats" style={{ marginTop: 24 }}>
-            <div className="stat"><strong>200+</strong><div>Projects Delivered</div></div>
-            <div className="stat"><strong>15+</strong><div>Countries</div></div>
-            <div className="stat"><strong>10+</strong><div>Years of Experience</div></div>
+          <div className="stats">
+            <div className="stat"><strong>200+</strong><span>Projects Delivered</span></div>
+            <div className="stat"><strong>15+</strong><span>Countries</span></div>
+            <div className="stat"><strong>10+</strong><span>Years of Experience</span></div>
           </div>
         </div>
       </section>

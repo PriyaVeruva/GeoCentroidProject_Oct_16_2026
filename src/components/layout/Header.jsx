@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { megaMenu, navLinks } from '../../data/navigation.js'
@@ -17,6 +17,19 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [megaOpen, setMegaOpen] = useState(false)
+
+  useEffect(() => {
+    setOpen(false)
+    setSearchOpen(false)
+    setMegaOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
 
   function onSearch(e) {
     e.preventDefault()
@@ -95,11 +108,16 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <button className="icon-btn" aria-label="Search" onClick={() => setSearchOpen((v) => !v)}>
+          <button className="icon-btn" aria-label="Search" onClick={() => { setSearchOpen((v) => !v); setOpen(false) }}>
             <Icon name="search" size={18} />
           </button>
-          <Button to="/quote">Request a Quote</Button>
-          <button className="icon-btn menu-toggle" aria-label="Menu" onClick={() => setOpen((v) => !v)}>
+          <Button className="header-quote" to="/quote">Request a Quote</Button>
+          <button
+            className="icon-btn menu-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => { setOpen((v) => !v); setSearchOpen(false) }}
+          >
             <Icon name={open ? 'close' : 'menu'} size={18} />
           </button>
         </div>
@@ -119,31 +137,32 @@ export default function Header() {
 
       {open ? (
         <div className="mobile-drawer">
-          {navLinks.map((link) => (
-            <div key={link.label}>
-              <Link to={link.to} onClick={() => setOpen(false)}>
+          {navLinks.map((link) =>
+            link.mega ? (
+              <details className="mobile-acc" key={link.label}>
+                <summary>{link.label}</summary>
+                <Link to={link.to} onClick={() => setOpen(false)}>All services</Link>
+                {megaMenu.map((col) => (
+                  <details className="mobile-acc-sub" key={col.title}>
+                    <summary>{col.title}</summary>
+                    {col.to ? (
+                      <Link to={col.to} onClick={() => setOpen(false)}>{col.title} overview</Link>
+                    ) : null}
+                    {col.items.map((item) => (
+                      <Link key={item.label} to={item.to} onClick={() => setOpen(false)}>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </details>
+                ))}
+              </details>
+            ) : (
+              <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>
                 {link.label}
               </Link>
-              {link.mega
-                ? megaMenu.map((col) => (
-                    <div className="mobile-sub" key={col.title}>
-                      <strong>
-                        {col.to ? (
-                          <Link to={col.to} onClick={() => setOpen(false)}>{col.title}</Link>
-                        ) : (
-                          col.title
-                        )}
-                      </strong>
-                      {col.items.map((item) => (
-                        <Link key={item.label} to={item.to} onClick={() => setOpen(false)}>
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))
-                : null}
-            </div>
-          ))}
+            )
+          )}
+          <Button to="/quote" onClick={() => setOpen(false)}>Request a Quote</Button>
         </div>
       ) : null}
     </header>

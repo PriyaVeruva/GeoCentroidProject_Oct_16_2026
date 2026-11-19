@@ -117,13 +117,27 @@
 }
 
 @media (max-width: 980px) {
+  .footer {
+    padding: 40px 0 16px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
   }
 }
 
 @media (max-width: 640px) {
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer .logo img {
+    height: 44px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
   }
 }

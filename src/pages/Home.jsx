@@ -23,11 +23,14 @@ export default function Home() {
               <Button to="/quote" variant="outline">Discuss Your Project</Button>
             </div>
           </div>
-          <div className="hero-pills">
+          <nav className="hero-pills" aria-label="Solution shortcuts">
             {heroPills.map((pill) => (
-              <span key={pill}>{pill}</span>
+              <Link className="hero-pill" key={pill.label} to={pill.to} title={`Open ${pill.label}`}>
+                {pill.label}
+                <span aria-hidden="true">→</span>
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 

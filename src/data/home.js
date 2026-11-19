@@ -1,12 +1,12 @@
 import { projects } from './projects.js'
 
 export const heroPills = [
-  'BIM & CAD',
-  'Geospatial',
-  'LiDAR & Reality Capture',
-  'Digital Twin',
-  'UAV & 3D Visualization',
-  'LiDAR & Drone Mapping',
+  { label: 'BIM & CAD', to: '/services/bim' },
+  { label: 'Geospatial', to: '/services/geospatial' },
+  { label: 'LiDAR & Reality Capture', to: '/services/scan-to-bim' },
+  { label: 'Digital Twin', to: '/services/digital-twin' },
+  { label: 'UAV & 3D Visualization', to: '/services/visualisation' },
+  { label: 'LiDAR & Drone Mapping', to: '/services/uav-drone-mapping' },
 ]
 
 export const solutions = [

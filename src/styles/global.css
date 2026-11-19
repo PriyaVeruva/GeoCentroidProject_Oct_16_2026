@@ -38,6 +38,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -319,6 +320,12 @@ ul {
   left: -999px;
 }
 
+@media (max-width: 1080px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+
 @media (max-width: 980px) {
   .grid-2,
   .cta-banner .row {
@@ -326,21 +333,59 @@ ul {
     display: grid;
   }
 
+  .cta-actions {
+    justify-content: flex-start;
+  }
+
   .section {
-    padding: 64px 0;
+    padding: 56px 0;
+  }
+
+  .cta-banner {
+    padding: 40px 0;
+  }
+
+  .cta-banner h2 {
+    max-width: none;
   }
 }
 
 @media (max-width: 640px) {
-  .container {
-    width: min(calc(100% - 28px), var(--container));
+  :root {
+    --header-h: 64px;
   }
 
-  .btn {
-    width: auto;
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+  }
+
+  .section {
+    padding: 44px 0;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 20px 16px;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    font-size: 16px;
+  }
+
+  .form-card .btn {
+    width: 100%;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
   }
 }

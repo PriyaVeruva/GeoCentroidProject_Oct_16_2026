@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom'
 import { Icon } from './Icons.jsx'
 
-export default function Button({ to, href, children, variant = 'primary', type = 'button', onClick, withArrow = true, disabled = false }) {
-  const className = `btn btn-${variant}`
+export default function Button({
+  to,
+  href,
+  children,
+  variant = 'primary',
+  type = 'button',
+  onClick,
+  withArrow = true,
+  disabled = false,
+  className = '',
+}) {
+  const classes = `btn btn-${variant} ${className}`.trim()
   const content = (
     <>
       {children}
@@ -10,10 +20,10 @@ export default function Button({ to, href, children, variant = 'primary', type =
     </>
   )
 
-  if (to) return <Link className={className} to={to}>{content}</Link>
-  if (href) return <a className={className} href={href}>{content}</a>
+  if (to) return <Link className={classes} to={to} onClick={onClick}>{content}</Link>
+  if (href) return <a className={classes} href={href} onClick={onClick}>{content}</a>
   return (
-    <button className={className} type={type} onClick={onClick} disabled={disabled}>
+    <button className={classes} type={type} onClick={onClick} disabled={disabled}>
       {content}
     </button>
   )
