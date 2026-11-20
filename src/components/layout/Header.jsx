@@ -143,17 +143,9 @@ export default function Header() {
                 <summary>{link.label}</summary>
                 <Link to={link.to} onClick={() => setOpen(false)}>All services</Link>
                 {megaMenu.map((col) => (
-                  <details className="mobile-acc-sub" key={col.title}>
-                    <summary>{col.title}</summary>
-                    {col.to ? (
-                      <Link to={col.to} onClick={() => setOpen(false)}>{col.title} overview</Link>
-                    ) : null}
-                    {col.items.map((item) => (
-                      <Link key={item.label} to={item.to} onClick={() => setOpen(false)}>
-                        {item.label}
-                      </Link>
-                    ))}
-                  </details>
+                  <Link key={col.title} to={col.to || link.to} onClick={() => setOpen(false)}>
+                    {col.title}
+                  </Link>
                 ))}
               </details>
             ) : (

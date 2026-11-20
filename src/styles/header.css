@@ -211,17 +211,30 @@
 }
 
 @media (max-width: 1080px) {
+  .header {
+    position: sticky;
+  }
+
+  .header-inner {
+    min-height: var(--header-h);
+    gap: 10px;
+  }
+
   .logo img {
-    height: 40px;
-    max-width: min(200px, 42vw);
+    height: 36px;
+    max-width: min(160px, 44vw);
+  }
+
+  .logo-on-dark {
+    padding: 4px 8px;
   }
 
   .nav {
-    display: none;
+    display: none !important;
   }
 
-  .header-quote {
-    display: none;
+  .header-actions .header-quote {
+    display: none !important;
   }
 
   .menu-toggle {
@@ -231,13 +244,15 @@
   .search-panel {
     left: 12px;
     right: 12px;
-    top: calc(100% + 4px);
+    top: 100%;
     width: auto;
+    z-index: 60;
   }
 
   .search-panel input {
     min-width: 0;
     flex: 1;
+    font-size: 16px;
   }
 
   .mobile-drawer {
@@ -245,23 +260,27 @@
     flex-direction: column;
     position: absolute;
     inset: 100% 0 auto 0;
+    z-index: 60;
     background: #fff;
     color: var(--text);
-    max-height: calc(100dvh - var(--header-h));
+    max-height: min(80dvh, calc(100dvh - var(--header-h)));
     overflow: auto;
-    padding: 8px 20px 24px;
+    padding: 8px 20px calc(24px + env(safe-area-inset-bottom));
     box-shadow: var(--shadow);
     -webkit-overflow-scrolling: touch;
   }
 
   .mobile-drawer > a:not(.btn),
   .mobile-drawer summary {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    min-height: 48px;
     text-align: left;
     background: none;
     border: 0;
-    padding: 14px 0;
+    padding: 12px 0;
     font-size: 16px;
     font-weight: 600;
     color: var(--navy-800);
@@ -288,63 +307,35 @@
 
   .mobile-acc > summary::after {
     content: '▾';
-    float: right;
     color: var(--text-muted);
+    font-size: 14px;
   }
 
   .mobile-acc[open] > summary::after {
     content: '▴';
   }
 
-  .mobile-acc > a,
-  .mobile-acc-sub {
-    margin-left: 8px;
-  }
-
   .mobile-acc > a {
     display: block;
-    padding: 10px 0;
-    font-size: 14px;
+    margin-left: 0;
+    padding: 12px 0 12px 12px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--blue-600);
-    border: 0;
-  }
-
-  .mobile-acc-sub {
-    padding: 4px 0 8px;
-  }
-
-  .mobile-acc-sub summary {
-    padding: 8px 0;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy-800);
-    border: 0;
-    list-style: none;
-  }
-
-  .mobile-acc-sub summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .mobile-acc-sub a {
-    display: block;
-    padding: 7px 0 7px 12px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--blue-600);
-    border: 0;
+    border-bottom: 1px solid var(--border);
+    min-height: 44px;
   }
 }
 
 @media (max-width: 480px) {
   .header-inner {
     gap: 8px;
-    width: min(calc(100% - 20px), 1240px);
+    width: min(calc(100% - 16px), 1240px);
   }
 
   .icon-btn {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
   }
 }

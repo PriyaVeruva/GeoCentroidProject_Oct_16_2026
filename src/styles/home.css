@@ -477,17 +477,46 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 0;
+    background:
+      linear-gradient(180deg, rgba(5, 14, 30, 0.92) 0%, rgba(8, 24, 48, 0.88) 100%),
+      url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1200&q=80') center / cover;
+  }
+
   .hero-grid {
-    gap: 24px;
-    padding: 28px 0 40px;
+    gap: 20px;
+    padding: 24px 0 32px;
   }
 
   .hero h1 {
     max-width: none;
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .hero p {
+    margin: 12px 0 20px;
+    font-size: 15px;
+  }
+
+  .hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    white-space: normal;
   }
 
   .hero-pills {
     grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .hero-pill {
+    min-height: 44px;
+  }
+
+  .hero-pill:hover,
+  .hero-pill:focus-visible {
+    transform: none;
   }
 
   .solution-card h3 {
@@ -500,6 +529,10 @@
 
   .quote-wrap {
     padding: 40px 0;
+  }
+
+  .quote-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -514,6 +547,7 @@
 
   .hero-actions {
     width: 100%;
+    flex-direction: column;
   }
 
   .hero-actions .btn {
@@ -522,5 +556,10 @@
 
   .solutions-head .section-lead br {
     display: none;
+  }
+
+  .band-head {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
