@@ -1,3 +1,15 @@
+.mega-backdrop {
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: rgba(7, 18, 34, 0.28);
+  cursor: default;
+  z-index: 40;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -90,23 +102,29 @@
   position: absolute;
   top: calc(100% + 10px);
   left: 50%;
-  transform: translateX(-50%);
   width: min(1180px, calc(100vw - 32px));
   background: #f7fbff;
   color: var(--text);
   border-radius: 18px;
   box-shadow: 0 30px 70px rgba(8, 24, 48, 0.18);
   padding: 20px 24px 18px;
-  display: none;
+  display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   column-gap: 28px;
   align-items: start;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 60;
 }
 
-.nav-item:hover .mega,
-.nav-item:focus-within .mega,
 .nav-item.open .mega {
-  display: grid;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 .mega-col {

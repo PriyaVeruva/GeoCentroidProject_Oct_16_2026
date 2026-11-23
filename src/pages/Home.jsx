@@ -15,7 +15,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <p className="eyebrow" style={{ color: '#8cbcff' }}>Integrated Digital Engineering Solutions</p>
+            <p className="hero-kicker">A Decade of Digital Engineering Excellence, Built on Trust and Innovation.</p>
             <h1>Powering Global Progress Through Technology</h1>
             <p>
               We combine BIM, Geospatial, Reality Capture and Digital Twin technologies to help you plan, design, build and operate smarter, safer and more sustainable assets.

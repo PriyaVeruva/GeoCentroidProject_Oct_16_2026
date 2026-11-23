@@ -18,6 +18,10 @@ export default function Header() {
   const [query, setQuery] = useState('')
   const [megaOpen, setMegaOpen] = useState(false)
 
+  function closeMega() {
+    setMegaOpen(false)
+  }
+
   useEffect(() => {
     setOpen(false)
     setSearchOpen(false)
@@ -25,11 +29,20 @@ export default function Header() {
   }, [pathname])
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (!megaOpen) return undefined
+    function onKey(e) {
+      if (e.key === 'Escape') closeMega()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [megaOpen])
+
+  useEffect(() => {
+    document.body.style.overflow = open || megaOpen ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
-  }, [open])
+  }, [open, megaOpen])
 
   function onSearch(e) {
     e.preventDefault()
@@ -58,6 +71,9 @@ export default function Header() {
 
   return (
     <header className={`header ${isDark ? 'header-dark' : 'header-light'}`}>
+      {megaOpen ? (
+        <button type="button" className="mega-backdrop" aria-label="Close services menu" onClick={closeMega} />
+      ) : null}
       <div className="header-inner">
         <Link to="/" onClick={() => setOpen(false)}>
           <Logo light={isDark} />
@@ -69,17 +85,18 @@ export default function Header() {
               <div className={`nav-item ${megaOpen ? 'open' : ''}`} key={link.label}>
                 <button
                   className={pathname.startsWith('/services') ? 'active' : ''}
+                  aria-expanded={megaOpen}
+                  aria-haspopup="true"
                   onClick={() => setMegaOpen((v) => !v)}
-                  onMouseEnter={() => setMegaOpen(true)}
                 >
                   {link.label} ▾
                 </button>
-                <div className="mega" onMouseLeave={() => setMegaOpen(false)}>
+                <div className="mega">
                   {megaMenu.map((col) => (
                     <div className="mega-col" key={col.title}>
                       <h4>
                         {col.to ? (
-                          <Link to={col.to} onClick={() => setMegaOpen(false)}>
+                          <Link to={col.to} onClick={closeMega}>
                             <Icon name={col.icon} size={16} />
                             <span>{col.title}</span>
                           </Link>
@@ -91,7 +108,7 @@ export default function Header() {
                         )}
                       </h4>
                       {col.items.map((item) => (
-                        <Link className="mega-item" key={item.label} to={item.to} onClick={() => setMegaOpen(false)}>
+                        <Link className="mega-item" key={item.label} to={item.to} onClick={closeMega}>
                           {item.label}
                         </Link>
                       ))}
