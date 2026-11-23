@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { megaMenu } from '../data/navigation.js'
+import { primaryServiceGroups } from '../data/navigation.js'
 import { serviceOverview } from '../data/services.js'
 import { Icon } from '../components/ui/Icons.jsx'
 import Button from '../components/ui/Button.jsx'
@@ -37,7 +37,7 @@ export default function Services() {
         <div className="container">
           <h2 className="section-title" style={{ marginBottom: 24 }}>Browse by Discipline</h2>
           <div className="overview-grid">
-            {megaMenu.map((col) => (
+            {primaryServiceGroups.map((col) => (
               <article className="overview-card" key={col.title}>
                 <h3 style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   <Icon name={col.icon} size={18} />

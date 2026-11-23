@@ -1,46 +1,40 @@
+import { megaMenu, primaryServiceGroups } from './navigation.js'
 import { projects } from './projects.js'
 
-export const heroPills = [
-  { label: 'BIM & CAD', to: '/services/bim' },
-  { label: 'Geospatial', to: '/services/geospatial' },
-  { label: 'LiDAR & Reality Capture', to: '/services/scan-to-bim' },
-  { label: 'Digital Twin', to: '/services/digital-twin' },
-  { label: 'UAV & 3D Visualization', to: '/services/visualisation' },
-  { label: 'LiDAR & Drone Mapping', to: '/services/uav-drone-mapping' },
-]
-
-export const solutions = [
-  {
-    title: 'BIM & CAD Engineering',
-    text: '3D modelling, coordination and engineering documentation.',
+const solutionMeta = {
+  BIM: {
+    text: 'Architectural, structural, MEPF and AIM modelling and coordination.',
     image: '/images/image8.jpeg',
-    to: '/services/bim',
   },
-  {
-    title: 'Geospatial & GIS',
-    text: 'Mapping, spatial analysis, remote sensing and GIS solutions.',
-    image: '/images/image16.jpeg',
-    to: '/services/geospatial',
-  },
-  {
-    title: 'LiDAR & Reality Capture',
-    text: '3D laser scanning, point clouds and Scan-to-BIM.',
+  'Scan to BIM': {
+    text: 'Point clouds and laser scans turned into intelligent 3D BIM models.',
     image: '/images/image6.jpeg',
-    to: '/services/scan-to-bim',
   },
-  {
-    title: 'Digital Twin & Visualization',
-    text: '3D models, simulation, AR/VR and immersive experiences.',
+  'CAD Engineering': {
+    text: 'Scan to CAD, measurable surveys, utility and plant documentation.',
+    image: '/images/image10.jpeg',
+  },
+  Geospatial: {
+    text: 'Mapping, photogrammetry, ortho processing, utility and UAV surveys.',
+    image: '/images/image16.jpeg',
+  },
+  'Digital Twin': {
+    text: 'AR/VR, visualisation and simulation for smarter operations.',
     image: '/images/image21.jpeg',
-    to: '/services/digital-twin',
   },
-  {
-    title: 'UAV & Drone Mapping',
-    text: 'Aerial surveys, orthomosaics, inspection and monitoring.',
-    image: '/images/image14.jpeg',
-    to: '/services/uav-drone-mapping',
-  },
-]
+}
+
+export const heroPills = megaMenu.map((group) => ({
+  label: group.title,
+  to: group.to,
+}))
+
+export const solutions = primaryServiceGroups.map((group) => ({
+  title: group.title,
+  to: group.to,
+  text: solutionMeta[group.title]?.text || group.items.map((item) => item.label).join(', ') + '.',
+  image: solutionMeta[group.title]?.image || '/images/image8.jpeg',
+}))
 
 export const featuredProjects = projects.slice(0, 4)
 

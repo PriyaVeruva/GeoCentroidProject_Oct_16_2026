@@ -331,7 +331,7 @@ export const services = {
 
 export const serviceOverview = [
   {
-    title: 'BIM Modelling',
+    title: 'BIM',
     text: 'Architectural, structural, MEPF and AIM models with LOD support.',
     to: '/services/bim',
   },
@@ -342,22 +342,17 @@ export const serviceOverview = [
   },
   {
     title: 'CAD Engineering',
-    text: 'Accurate, detailed, build-ready CAD documentation.',
+    text: 'Scan to CAD, measurable surveys, utility and plant documentation.',
     to: '/services/cad-engineering',
   },
   {
-    title: 'Geospatial & GIS',
-    text: 'Mapping, photogrammetry, ortho processing and utility surveys.',
+    title: 'Geospatial',
+    text: 'Mapping, photogrammetry, ortho processing, utility and UAV surveys.',
     to: '/services/geospatial',
   },
   {
     title: 'Digital Twin',
     text: 'AR/VR, visualisation and simulation for smarter operations.',
     to: '/services/digital-twin',
-  },
-  {
-    title: 'IT Services',
-    text: 'Consulting, software development, quality and support.',
-    to: '/services/it-services',
   },
 ]

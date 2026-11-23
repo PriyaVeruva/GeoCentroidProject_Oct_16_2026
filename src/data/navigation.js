@@ -75,6 +75,8 @@ export const megaMenu = [
   },
 ]
 
+export const primaryServiceGroups = megaMenu.filter((group) => group.title !== 'IT Services')
+
 export const footerLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
