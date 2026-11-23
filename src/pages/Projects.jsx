@@ -19,7 +19,7 @@ export default function Projects() {
           <h1>Real Projects. Measurable Results.</h1>
           <p>From complex infrastructure to industrial assets, our projects showcase the power of integrated digital solutions in solving real-world challenges.</p>
           <div className="stats">
-            <div className="stat"><strong>200+</strong><span>Projects Delivered</span></div>
+            <div className="stat"><strong>450+</strong><span>Projects Delivered</span></div>
             <div className="stat"><strong>15+</strong><span>Countries</span></div>
             <div className="stat"><strong>10+</strong><span>Years of Experience</span></div>
           </div>
@@ -36,13 +36,13 @@ export default function Projects() {
           </div>
           <div className="card-grid">
             {list.map((item) => (
-              <Link className="media-card" to={`/projects/${item.slug}`} key={item.slug}>
-                <img src={item.image} alt="" />
+              <Link className="media-card" to={item.href} key={item.slug}>
+                <img src={item.image} alt={item.title} />
                 <div>
                   <p className="eyebrow">{item.tag}</p>
                   <h3>{item.title}</h3>
                   <p className="section-lead">{item.meta}</p>
-                  <span className="link-arrow">View case study →</span>
+                  <p className="media-card-blurb">{item.blurb}</p>
                 </div>
               </Link>
             ))}

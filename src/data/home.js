@@ -41,7 +41,6 @@ export const featuredProjects = projects.slice(0, 4)
 export const industries = [
   { label: 'Infrastructure', icon: 'infra' },
   { label: 'Architecture & Construction', icon: 'arch' },
-  { label: 'Transportation', icon: 'transport' },
   { label: 'Energy & Utilities', icon: 'energy' },
   { label: 'Oil & Gas', icon: 'oil' },
   { label: 'Manufacturing', icon: 'factory' },

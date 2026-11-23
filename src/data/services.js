@@ -100,7 +100,7 @@ export const services = {
     extra: 'Our architectural BIM solutions support projects from concept design through construction documentation and as-built modelling.',
     cta: 'Discuss Your Architectural BIM Project',
     heroNote: ['Better Designs.', 'Better Coordination.', 'Better Outcomes.'],
-    heroImage: '/images/image8.jpeg',
+    heroImage: '/images/industries/architectural-bim.png',
     capabilitiesTitle: 'Our Architectural BIM Capabilities',
     capabilities: [
       { n: '01', title: 'Architectural BIM Modelling', text: '3D modelling of walls, floors, doors, windows, roofs, façades and other building components.', image: '/images/image8.jpeg' },

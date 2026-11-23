@@ -8,6 +8,7 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const project = projects.find((item) => item.slug === slug)
   if (!project) return <Navigate to="/projects" replace />
+  if (project.href) return <Navigate to={project.href} replace />
 
   const others = projects.filter((item) => item.slug !== slug).slice(0, 3)
 

@@ -560,6 +560,19 @@ a.media-card:hover {
   padding: 16px;
 }
 
+.media-card-blurb {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.media-card h3 {
+  margin: 4px 0 6px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
 .contact-section {
   background: linear-gradient(#fff, var(--bg-soft));
 }

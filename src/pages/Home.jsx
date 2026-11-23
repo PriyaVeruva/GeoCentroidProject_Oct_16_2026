@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/ui/Button.jsx'
 import { Icon } from '../components/ui/Icons.jsx'
+import IndustryCard from '../components/ui/IndustryCard.jsx'
 import QuoteForm from '../components/forms/QuoteForm.jsx'
 import { company } from '../data/company.js'
 import { featuredProjects, heroPills, solutions, whyUs } from '../data/home.js'
 import { industrySectors } from '../data/industries.js'
+import '../styles/pages.css'
 import '../styles/home.css'
 
 export default function Home() {
@@ -73,8 +75,8 @@ export default function Home() {
           </div>
           <div className="project-cards">
             {featuredProjects.map((project) => (
-              <Link className="project-card" to={`/projects/${project.slug}`} key={project.slug}>
-                <img src={project.image} alt="" />
+              <Link className="project-card" to={project.href} key={project.slug}>
+                <img src={project.image} alt={project.title} />
                 <div className="project-card-body">
                   <small>{project.tag}</small>
                   <h3>{project.title}</h3>
@@ -98,12 +100,9 @@ export default function Home() {
             </div>
             <Button to="/industries">Explore All Industries</Button>
           </div>
-          <div className="industry-grid">
+          <div className="industry-home-grid">
             {industrySectors.map((item) => (
-              <Link className="industry-chip" to={`/industries#${item.slug}`} key={item.slug}>
-                <span><Icon name={item.icon} size={22} /></span>
-                <strong>{item.title}</strong>
-              </Link>
+              <IndustryCard item={item} key={item.slug} />
             ))}
           </div>
         </div>
