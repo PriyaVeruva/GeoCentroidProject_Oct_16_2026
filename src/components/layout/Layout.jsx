@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import ComingSoonBar from '../ui/ComingSoonBar.jsx'
 import { services } from '../../data/services.js'
 import { projects } from '../../data/projects.js'
 import { insights } from '../../data/insights.js'
@@ -99,6 +100,7 @@ export default function Layout() {
         <img src="/logo.png" alt="GeoCentroid" />
       </div>
       <a className="skip-link" href="#main">Skip to content</a>
+      <ComingSoonBar />
       <Header />
       <main id="main" className="page-main">
         <Outlet />

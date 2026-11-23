@@ -30,11 +30,24 @@ export default function Header() {
 
   useEffect(() => {
     if (!megaOpen) return undefined
+
     function onKey(e) {
       if (e.key === 'Escape') closeMega()
     }
+
+    function onPointerDown(e) {
+      const target = e.target
+      if (!(target instanceof Element)) return
+      if (target.closest('.mega') || target.closest('[aria-haspopup="true"]')) return
+      closeMega()
+    }
+
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
   }, [megaOpen])
 
   useEffect(() => {
@@ -70,10 +83,11 @@ export default function Header() {
   }
 
   return (
-    <header className={`header ${isDark ? 'header-dark' : 'header-light'}`}>
+    <>
       {megaOpen ? (
         <button type="button" className="mega-backdrop" aria-label="Close services menu" onClick={closeMega} />
       ) : null}
+      <header className={`header ${isDark ? 'header-dark' : 'header-light'}`}>
       <div className="header-inner">
         <Link to="/" onClick={() => setOpen(false)}>
           <Logo light={isDark} />
@@ -93,7 +107,7 @@ export default function Header() {
                 </button>
                 <div className="mega">
                   {megaMenu.map((col) => (
-                    <div className="mega-col" key={col.title}>
+                    <div className={`mega-col${pathname === col.to ? ' is-current' : ''}`} key={col.title}>
                       <h4>
                         {col.to ? (
                           <Link to={col.to} onClick={closeMega}>
@@ -108,7 +122,12 @@ export default function Header() {
                         )}
                       </h4>
                       {col.items.map((item) => (
-                        <Link className="mega-item" key={item.label} to={item.to} onClick={closeMega}>
+                        <Link
+                          className={`mega-item${pathname === item.to ? ' is-active' : ''}`}
+                          key={item.label}
+                          to={item.to}
+                          onClick={closeMega}
+                        >
                           {item.label}
                         </Link>
                       ))}
@@ -175,5 +194,6 @@ export default function Header() {
         </div>
       ) : null}
     </header>
+    </>
   )
 }

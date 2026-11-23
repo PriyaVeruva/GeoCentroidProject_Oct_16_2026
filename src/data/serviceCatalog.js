@@ -134,7 +134,7 @@ export const extraServices = {
     crumbs: ['Home', 'Services', 'Scan to BIM', 'Architectural'],
     intro: 'We create detailed architectural 3D models from point cloud data, including floor plans, elevations, sections and interior layouts.',
     extra: 'Accurate as-built architecture for renovation, heritage, facilities and design coordination.',
-    heroImage: '/images/image8.jpeg',
+    heroImage: '/images/industries/scan-to-bim-hero.png',
     heroNote: ['Point Cloud', 'Architectural BIM', 'As-Built'],
     cta: 'Discuss Architectural Scan to BIM',
     capabilitiesTitle: 'Architectural Scan to BIM Capabilities',

@@ -18,6 +18,7 @@
   --radius: 16px;
   --radius-sm: 10px;
   --header-h: 84px;
+  --soon-h: 36px;
   --container: 1180px;
   --font: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
 }
@@ -315,6 +316,44 @@ ul {
   pointer-events: none;
 }
 
+.coming-soon-bar {
+  position: sticky;
+  top: 0;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 8px 16px;
+  background: #071627;
+  border-bottom: 1px solid rgba(140, 188, 255, 0.18);
+  color: #d7e6ff;
+}
+
+.coming-soon-bar p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.coming-soon-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #8cbcff;
+  box-shadow: 0 0 0 4px rgba(140, 188, 255, 0.16);
+  animation: coming-soon-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes coming-soon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -351,6 +390,17 @@ ul {
 }
 
 @media (max-width: 640px) {
+  .coming-soon-bar {
+    min-height: 34px;
+    padding: 8px 12px;
+  }
+
+  .coming-soon-bar p {
+    letter-spacing: 0.08em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
   :root {
     --header-h: 64px;
   }

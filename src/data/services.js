@@ -100,7 +100,7 @@ export const services = {
     extra: 'Our architectural BIM solutions support projects from concept design through construction documentation and as-built modelling.',
     cta: 'Discuss Your Architectural BIM Project',
     heroNote: ['Better Designs.', 'Better Coordination.', 'Better Outcomes.'],
-    heroImage: '/images/industries/architectural-bim.png',
+    heroImage: '/images/capabilities/architectural-bim-modelling.png',
     capabilitiesTitle: 'Our Architectural BIM Capabilities',
     capabilities: [
       { n: '01', title: 'Architectural BIM Modelling', text: '3D modelling of walls, floors, doors, windows, roofs, façades and other building components.', image: '/images/capabilities/architectural-bim-modelling.png' },
@@ -244,7 +244,7 @@ export const services = {
     extra: 'We capture real-world data, create precise as-built models and deliver information-rich BIM models to support design, renovation, facility management and lifecycle planning.',
     cta: 'Discuss Your Scan to BIM Project',
     heroNote: ['Point Cloud Scan Data', 'BIM Model'],
-    heroImage: '/images/image13.jpeg',
+    heroImage: '/images/industries/scan-to-bim-hero.png',
     capabilitiesTitle: 'Our Scan to BIM Services',
     capabilities: [
       { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/image8.jpeg', to: '/services/scan-to-bim-architectural' },
