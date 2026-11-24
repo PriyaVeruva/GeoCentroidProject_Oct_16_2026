@@ -1,15 +1,22 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { projectFilters, projects } from '../data/projects.js'
 import CtaBanner from '../components/ui/CtaBanner.jsx'
 import '../styles/pages.css'
 
 export default function Projects() {
-  const [filter, setFilter] = useState('All Projects')
+  const [params, setParams] = useSearchParams()
+  const requested = params.get('filter')
+  const filter = projectFilters.includes(requested) ? requested : 'All Projects'
   const list = useMemo(() => {
     if (filter === 'All Projects') return projects
     return projects.filter((item) => item.tag === filter)
   }, [filter])
+
+  const setFilter = (item) => {
+    if (item === 'All Projects') setParams({})
+    else setParams({ filter: item })
+  }
 
   return (
     <>
@@ -25,7 +32,7 @@ export default function Projects() {
           </div>
         </div>
       </section>
-      <section className="section">
+      <section className="section" id="project-list">
         <div className="container">
           <div className="filter-row">
             {projectFilters.map((item) => (
@@ -36,7 +43,7 @@ export default function Projects() {
           </div>
           <div className="card-grid">
             {list.map((item) => (
-              <Link className="media-card" to={`/projects/${item.slug}`} key={item.slug}>
+              <Link className="media-card" to={item.serviceTo || `/projects/${item.slug}`} key={item.slug}>
                 <img src={item.image} alt={item.title} />
                 <div>
                   <p className="eyebrow">{item.tag}</p>

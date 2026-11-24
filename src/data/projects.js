@@ -21,6 +21,7 @@ export const projects = [
     challenge: 'Design intent and site conditions needed a single architectural model the contractor and client could both use.',
     approach: 'We modelled architecture to the agreed LOD, issued plans, sections and elevations, and coordinated openings with structure.',
     outcome: 'A clear BIM set for construction, fit-out and facilities — without rebuilding the model at handover.',
+    serviceTo: '/services/architectural-bim',
     services: [
       { label: 'BIM', to: '/services/bim' },
       { label: 'Architectural BIM', to: '/services/architectural-bim' },
@@ -39,6 +40,7 @@ export const projects = [
     challenge: 'Existing drawings did not match site conditions. Design and facilities teams needed a reliable as-built BIM model before a retrofit.',
     approach: 'We processed registered point clouds, modelled architecture, structure and visible MEPF to the agreed LOD, and issued coordinated Revit models.',
     outcome: 'The client received an as-built BIM set for design, coordination and FM without re-surveying the whole campus.',
+    serviceTo: '/services/scan-to-bim',
     services: [
       { label: 'Scan to BIM', to: '/services/scan-to-bim' },
       { label: 'Architectural BIM', to: '/services/architectural-bim' },
@@ -58,6 +60,7 @@ export const projects = [
     challenge: 'Brownfield piping did not match available 2D drawings. Planners needed clearance and access certainty.',
     approach: 'Laser scanning, registration and plant CAD modelling of piping and equipment, with GA extracts for the contractor.',
     outcome: 'A coordinated as-built plant model used for access studies and fabrication checks before the outage.',
+    serviceTo: '/services/plant-modelling',
     services: [
       { label: 'CAD Engineering', to: '/services/cad-engineering' },
       { label: 'Plant Modelling', to: '/services/plant-modelling' },
@@ -77,6 +80,7 @@ export const projects = [
     challenge: 'The authority needed corridor geometry and asset inventory without stopping traffic for a conventional survey.',
     approach: 'Vehicle-based LiDAR and imagery were captured, georeferenced and extracted into CAD/GIS layers for design and asset teams.',
     outcome: 'A reusable corridor dataset for design, land and maintenance, with repeat-survey potential during construction.',
+    serviceTo: '/services/geospatial',
     services: [
       { label: 'Geospatial', to: '/services/geospatial' },
       { label: 'Mobile Mapping', to: '/services/mobile-mapping' },
@@ -96,6 +100,7 @@ export const projects = [
     challenge: 'Agencies needed a shared 3D picture of existing and proposed form, not separate models in isolation.',
     approach: 'We federated available BIM, GIS and reality capture, then prepared visualisation scenes for review workshops.',
     outcome: 'A twin foundation the client could present, iterate and later connect to operational layers.',
+    serviceTo: '/services/digital-twin',
     services: [
       { label: 'Digital Twin', to: '/services/digital-twin' },
       { label: 'Visualisation', to: '/services/visualisation' },

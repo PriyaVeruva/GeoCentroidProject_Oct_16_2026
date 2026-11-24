@@ -216,7 +216,7 @@ export const extraServices = {
     crumbs: ['Home', 'Services', 'Scan to BIM', 'MEPF'],
     intro: 'We model mechanical, electrical, plumbing and fire protection systems from point cloud data for coordinated, efficient building services design.',
     extra: 'Ideal for as-built records, retrofit, clash detection and facilities planning.',
-    heroImage: '/images/image6.jpeg',
+    heroImage: '/images/capabilities/scan-to-bim-mepf.png',
     heroNote: ['Point Cloud', 'MEPF BIM', 'As-Built'],
     cta: 'Discuss MEPF Scan to BIM',
     capabilitiesTitle: 'MEPF Scan to BIM Capabilities',

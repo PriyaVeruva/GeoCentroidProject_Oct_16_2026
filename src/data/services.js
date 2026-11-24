@@ -249,7 +249,7 @@ export const services = {
     capabilities: [
       { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/capabilities/scan-to-bim-architectural.png', to: '/services/scan-to-bim-architectural' },
       { n: '02', title: 'Structural', text: 'Accurate structural models for analysis, design and construction, including columns, beams, slabs, rebar modelling and connection details.', image: '/images/image5.jpeg', to: '/services/scan-to-bim-structural' },
-      { n: '03', title: 'MEPF', text: 'Coordinated building services models for efficient operations covering HVAC, electrical, plumbing and fire protection systems.', image: '/images/image6.jpeg', to: '/services/scan-to-bim-mepf' },
+      { n: '03', title: 'MEPF', text: 'Coordinated building services models for efficient operations covering HVAC, electrical, plumbing and fire protection systems.', image: '/images/capabilities/scan-to-bim-mepf.png', to: '/services/scan-to-bim-mepf' },
     ],
     elementsTitle: 'Our Process',
     elements: [

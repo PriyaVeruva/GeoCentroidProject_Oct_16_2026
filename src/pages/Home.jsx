@@ -18,7 +18,7 @@ export default function Home() {
             <p className="hero-kicker">A Decade of Digital Engineering Excellence, Built on Trust and Innovation.</p>
             <h1>Powering Global Progress Through Technology</h1>
             <p>
-              We combine BIM, Geospatial, Reality Capture and Digital Twin technologies to help you plan, design, build and operate smarter, safer and more sustainable assets.
+              Transforming complex challenges into intelligent solutions that drive innovation, enhance efficiency, and shape a better-built world.
             </p>
             <div className="hero-actions">
               <Button to="/services">Explore Our Solutions</Button>
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
           <div className="project-cards">
             {featuredProjects.map((project) => (
-              <Link className="project-card" to={`/projects/${project.slug}`} key={project.slug}>
+              <Link className="project-card" to={`/projects?filter=${encodeURIComponent(project.tag)}`} key={project.slug}>
                 <img src={project.image} alt={project.title} />
                 <div className="project-card-body">
                   <small>{project.tag}</small>
