@@ -146,7 +146,7 @@ export const services = {
     extra: 'Our MEPF BIM solutions cover mechanical, electrical, plumbing and fire protection systems across commercial, residential, healthcare, industrial and infrastructure projects.',
     cta: 'Discuss Your MEPF BIM Project',
     heroNote: ['Better Systems.', 'Better Coordination.', 'Better Outcomes.'],
-    heroImage: '/images/image6.jpeg',
+    heroImage: '/images/capabilities/mepf-bim.png',
     capabilitiesTitle: 'Our MEPF BIM Capabilities',
     capabilities: [
       { n: '01', title: 'Mechanical BIM Modelling', text: 'Modelling of HVAC systems, air ducts, piping, ventilation equipment, chillers and associated mechanical components.', image: '/images/image15.jpeg' },
@@ -247,7 +247,7 @@ export const services = {
     heroImage: '/images/industries/scan-to-bim-hero.png',
     capabilitiesTitle: 'Our Scan to BIM Services',
     capabilities: [
-      { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/image8.jpeg', to: '/services/scan-to-bim-architectural' },
+      { n: '01', title: 'Architectural', text: 'Detailed 3D models for building architecture and interior spaces from point cloud data, including floor plans, elevations, sections and interior layouts.', image: '/images/capabilities/scan-to-bim-architectural.png', to: '/services/scan-to-bim-architectural' },
       { n: '02', title: 'Structural', text: 'Accurate structural models for analysis, design and construction, including columns, beams, slabs, rebar modelling and connection details.', image: '/images/image5.jpeg', to: '/services/scan-to-bim-structural' },
       { n: '03', title: 'MEPF', text: 'Coordinated building services models for efficient operations covering HVAC, electrical, plumbing and fire protection systems.', image: '/images/image6.jpeg', to: '/services/scan-to-bim-mepf' },
     ],
@@ -292,7 +292,7 @@ export const services = {
     extra: 'Accurate. Detailed. Build-Ready.',
     cta: 'Discuss Your CAD Engineering Project',
     heroNote: ['Scan to CAD', 'Measurable Building Survey', 'Utility Engineering', 'Plant Modelling'],
-    heroImage: '/images/image7.jpeg',
+    heroImage: '/images/capabilities/home-cad.png',
     capabilitiesTitle: 'Our CAD Engineering Services',
     capabilities: [
       { n: '01', title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings with high precision and detail.', image: '/images/image13.jpeg', to: '/services/scan-to-cad' },

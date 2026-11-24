@@ -4,23 +4,23 @@ import { projects } from './projects.js'
 const solutionMeta = {
   BIM: {
     text: 'Architectural, structural, MEPF and AIM modelling and coordination.',
-    image: '/images/image8.jpeg',
+    image: '/images/capabilities/home-bim.png',
   },
   'Scan to BIM': {
     text: 'Point clouds and laser scans turned into intelligent 3D BIM models.',
-    image: '/images/image6.jpeg',
+    image: '/images/capabilities/home-scan-to-bim.png',
   },
   'CAD Engineering': {
     text: 'Scan to CAD, measurable surveys, utility and plant documentation.',
-    image: '/images/image10.jpeg',
+    image: '/images/capabilities/home-cad.png',
   },
   Geospatial: {
     text: 'Mapping, photogrammetry, ortho processing, utility and UAV surveys.',
-    image: '/images/image16.jpeg',
+    image: '/images/capabilities/home-geospatial.png',
   },
   'Digital Twin': {
     text: 'AR/VR, visualisation and simulation for smarter operations.',
-    image: '/images/image21.jpeg',
+    image: '/images/capabilities/home-digital-twin.png',
   },
 }
 

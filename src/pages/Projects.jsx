@@ -36,7 +36,7 @@ export default function Projects() {
           </div>
           <div className="card-grid">
             {list.map((item) => (
-              <Link className="media-card" to={item.href} key={item.slug}>
+              <Link className="media-card" to={`/projects/${item.slug}`} key={item.slug}>
                 <img src={item.image} alt={item.title} />
                 <div>
                   <p className="eyebrow">{item.tag}</p>

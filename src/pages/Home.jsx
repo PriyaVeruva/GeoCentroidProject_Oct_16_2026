@@ -75,7 +75,7 @@ export default function Home() {
           </div>
           <div className="project-cards">
             {featuredProjects.map((project) => (
-              <Link className="project-card" to={project.href} key={project.slug}>
+              <Link className="project-card" to={`/projects/${project.slug}`} key={project.slug}>
                 <img src={project.image} alt={project.title} />
                 <div className="project-card-body">
                   <small>{project.tag}</small>

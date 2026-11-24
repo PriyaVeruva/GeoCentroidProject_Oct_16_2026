@@ -58,7 +58,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {service.children?.length ? (
+      {service.children?.length && !service.capabilities?.some((item) => item.to) ? (
         <section className="section">
           <div className="container">
             <h2 className="section-title" style={{ marginBottom: 24 }}>
