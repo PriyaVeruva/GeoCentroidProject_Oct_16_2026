@@ -135,16 +135,29 @@ export default function ServiceDetail() {
               <p className="eyebrow">Sectors</p>
               <h2 className="section-title">Industries We Support</h2>
               <p className="section-lead">
-                The same coordinated BIM, survey and digital delivery applied across the sectors our clients operate in.
+                {service.category === 'IT Services'
+                  ? 'IT consulting, software and quality support for digital engineering programmes across these sectors.'
+                  : 'The same coordinated BIM, survey and digital delivery applied across the sectors our clients operate in.'}
               </p>
             </div>
             <Button to="/industries">View all industries</Button>
           </div>
-          <div className="industry-showcase">
-            {industrySectors.slice(0, 6).map((item) => (
-              <IndustryCard item={item} key={item.slug} />
-            ))}
-          </div>
+          {service.category === 'IT Services' ? (
+            <div className="industry-tiles">
+              {service.industries.map((item) => (
+                <Link className="industry-tile" to="/industries" key={item.title}>
+                  <img src={item.image} alt="" />
+                  <span>{item.title}</span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="industry-showcase">
+              {industrySectors.slice(0, 6).map((item) => (
+                <IndustryCard item={item} key={item.slug} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
