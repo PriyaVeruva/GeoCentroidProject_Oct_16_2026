@@ -142,7 +142,7 @@ export default function ServiceDetail() {
             </div>
             <Button to="/industries">View all industries</Button>
           </div>
-          {service.category === 'IT Services' ? (
+          {/* {service.category === 'IT Services' ? (
             <div className="industry-tiles">
               {service.industries.map((item) => (
                 <Link className="industry-tile" to="/industries" key={item.title}>
@@ -151,13 +151,13 @@ export default function ServiceDetail() {
                 </Link>
               ))}
             </div>
-          ) : (
+          ) : ( */}
             <div className="industry-showcase">
               {industrySectors.slice(0, 6).map((item) => (
                 <IndustryCard item={item} key={item.slug} />
               ))}
             </div>
-          )}
+          {/* )} */}
         </div>
       </section>
 

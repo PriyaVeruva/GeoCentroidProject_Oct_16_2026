@@ -295,10 +295,10 @@ export const services = {
     heroImage: '/images/capabilities/home-cad.png',
     capabilitiesTitle: 'Our CAD Engineering Services',
     capabilities: [
-      { n: '01', title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings with high precision and detail.', image: '/images/image13.jpeg', to: '/services/scan-to-cad' },
-      { n: '02', title: 'Measurable Building Survey', text: 'Capture accurate as-built dimensions and documentation using advanced surveying techniques and tools.', image: '/images/image26.jpeg', to: '/services/measurable-building-survey' },
-      { n: '03', title: 'Utility Engineering', text: 'Map and coordinate underground utilities with precise drawings and 3D models for safe and efficient project execution.', image: '/images/image17.jpeg', to: '/services/utility-engineering' },
-      { n: '04', title: 'Plant Modelling', text: 'Deliver detailed 3D CAD models for industrial plants, piping systems and process facilities.', image: '/images/image22.jpeg', to: '/services/plant-modelling' },
+      { n: '01', title: 'Scan to CAD', text: 'Convert point cloud and laser scanning data into accurate 2D/3D CAD drawings with high precision and detail.', image: '/images/cad-01.png', to: '/services/scan-to-cad' },
+      { n: '02', title: 'Measurable Building Survey', text: 'Capture accurate as-built dimensions and documentation using advanced surveying techniques and tools.', image: '/images/cad-02.png', to: '/services/measurable-building-survey' },
+      { n: '03', title: 'Utility Engineering', text: 'Map and coordinate underground utilities with precise drawings and 3D models for safe and efficient project execution.', image: '/images/cad-03.png', to: '/services/utility-engineering' },
+      { n: '04', title: 'Plant Modelling', text: 'Deliver detailed 3D CAD models for industrial plants, piping systems and process facilities.', image: '/images/cad-04.png', to: '/services/plant-modelling' },
     ],
     elementsTitle: 'CAD Service Capabilities',
     elements: [
