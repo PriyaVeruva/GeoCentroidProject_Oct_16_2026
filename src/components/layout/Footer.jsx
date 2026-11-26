@@ -15,9 +15,9 @@ export default function Footer() {
               GeoCentroid delivers BIM, geospatial, reality capture and digital twin solutions that help teams plan, design, build and operate smarter assets.
             </p>
             <div className="socials">
-              <a href="https://linkedin.com" aria-label="LinkedIn"><Icon name="linkedin" size={14} /></a>
-              <a href="https://youtube.com" aria-label="YouTube"><Icon name="youtube" size={14} /></a>
-              <a href="https://x.com" aria-label="X"><Icon name="x" size={14} /></a>
+              <a href="https://in.linkedin.com/company/geocentroid-pvt.-ltd" aria-label="LinkedIn"><Icon name="linkedin" size={14} /></a>
+              <a href="https://youtube.com/@geocentroidpvt.ltd.4196?si=8vRmNnLTIp7XiwOO" aria-label="YouTube"><Icon name="youtube" size={14} /></a>
+              <a href="https://www.instagram.com/geocentroid?jplx=MXNyazhjbG9jMHl4ZA==" aria-label="X"><Icon name="x" size={14} /></a>
             </div>
           </div>
 

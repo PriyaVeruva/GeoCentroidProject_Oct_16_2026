@@ -46,11 +46,11 @@ export const megaMenu = [
     icon: 'pin',
     to: '/services/geospatial',
     items: [
+      { label: 'UAV Mapping', to: '/services/uav-drone-mapping' },
       { label: 'Mobile Mapping', to: '/services/mobile-mapping' },
       { label: 'Photogrammetry', to: '/services/photogrammetry' },
       { label: 'Ortho Processing', to: '/services/ortho-processing' },
       { label: 'Utility Survey', to: '/services/utility-survey' },
-      { label: 'UAV Mapping', to: '/services/uav-drone-mapping' },
     ],
   },
   {
